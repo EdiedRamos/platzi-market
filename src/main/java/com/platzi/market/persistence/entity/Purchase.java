@@ -25,7 +25,7 @@ public class Purchase {
     private String state;
 
     @ManyToOne
-    @JoinColumn(name = "client_id")
+    @JoinColumn(name = "client_id", insertable = false, updatable = false)
     private Client client;
 
     public Purchase() {
