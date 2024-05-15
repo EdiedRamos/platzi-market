@@ -1,9 +1,8 @@
 package com.platzi.market.persistence.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "clients")
@@ -23,6 +22,9 @@ public class Client {
     private String address;
 
     private String email;
+
+    @OneToMany(mappedBy = "client")
+    private List<Purchase> purchases;
 
     public Client() {
     }

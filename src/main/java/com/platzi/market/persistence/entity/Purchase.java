@@ -24,6 +24,10 @@ public class Purchase {
 
     private String state;
 
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
+
     public Purchase() {
     }
 
